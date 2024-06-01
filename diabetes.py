@@ -52,10 +52,10 @@ input_features = {
     'BPLevel': 'BP Level'
 }
 
-# # Process input features
-# features = {}
-# for key, label in input_features.items():
-#     features[key] = st.text_input(label)
+# Process input features
+features = {}
+for key, label in input_features.items():
+    features[key] = st.text_input(label)
 
 #     # Handle empty inputs
 #     if features[key] == '':
