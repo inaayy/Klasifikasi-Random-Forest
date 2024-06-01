@@ -3,10 +3,27 @@ import pickle
 import numpy as np
 
 # Load the trained model
-filename = 'diabetes_dataset.sav'
-with open(filename, 'rb') as file:
-    model_RF = pickle.load(file)
+# filename = 'diabetes_dataset.sav'
+# with open(filename, 'rb') as file:
+#     model_RF = pickle.load(file)
 #model_RF = pickle.load(open('diabetes_dataset.sav', 'rb'))
+
+filename1 = 'diabetes_model_1.sav'
+filename2 = 'diabetes_model_2.sav'
+filename3 = 'diabetes_model_3.sav'
+
+# Load tiga bagian model
+with open(filename1, 'rb') as file1:
+    RF_model_part1 = pickle.load(file1)
+
+with open(filename2, 'rb') as file2:
+    RF_model_part2 = pickle.load(file2)
+
+with open(filename3, 'rb') as file3:
+    RF_model_part3 = pickle.load(file3)
+
+# Gabungkan ketiga bagian model menjadi satu model utuh
+RF_model = RF_model_part1 + RF_model_part2 + RF_model_part3
 
 # Function to make predictions
 def predict_diabetes(features):
