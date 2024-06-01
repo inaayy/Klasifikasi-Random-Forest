@@ -35,6 +35,8 @@ input_features = {
 
 # Process input features
 features = {}
+all_filled = True
+
 for key, label in input_features.items():
     features[key] = st.text_input(label)
 
