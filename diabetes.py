@@ -68,11 +68,11 @@ features = np.array([features[key] for key in input_features])
 
 # Prediction
 if st.button('Klasifikasi'):
-    if any(val == 0.0 for val in features):
-        st.warning('Silakan isi semua data sebelum melakukan klasifikasi.')
+    # if any(val == 0.0 for val in features):
+    #     st.warning('Silakan isi semua data sebelum melakukan klasifikasi.')
+    # else:
+    result = predict_diabetes(features)
+    if result == 1:
+        st.error('Pasien menderita diabetes.')
     else:
-        result = predict_diabetes(features)
-        if result == 1:
-            st.error('Pasien menderita diabetes.')
-        else:
-            st.success('Pasien tidak menderita diabetes.')
+        st.success('Pasien tidak menderita diabetes.')
