@@ -27,7 +27,7 @@ RF_model = RF_model1 + RF_model2 + RF_model3
 
 # Function to make predictions
 def predict_diabetes(features):
-    prediction = model_RF.predict([features])
+    prediction = RF_model.predict([features])
     return prediction[0]
 
 
