@@ -8,9 +8,9 @@ import numpy as np
 #     model_RF = pickle.load(file)
 #model_RF = pickle.load(open('diabetes_dataset.sav', 'rb'))
 
-filename1 = 'diabetes_model_1.sav'
-filename2 = 'diabetes_model_2.sav'
-filename3 = 'diabetes_model_3.sav'
+filename1 = 'diabetes_model_1.pkl'
+filename2 = 'diabetes_model_2.pkl'
+filename3 = 'diabetes_model_3.pkl'
 
 # Load tiga bagian model
 with open(filename1, 'rb') as file1:
