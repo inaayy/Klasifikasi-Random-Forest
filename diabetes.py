@@ -52,19 +52,34 @@ input_features = {
     'BPLevel': 'BP Level'
 }
 
-# Process input features
-features = {}
-for key, label in input_features.items():
-    features[key] = st.text_input(label)
+# # Process input features
+# features = {}
+# for key, label in input_features.items():
+#     features[key] = st.text_input(label)
 
-    # Handle empty inputs
-    if features[key] == '':
-        features[key] = 0
+#     # Handle empty inputs
+#     if features[key] == '':
+#         features[key] = 0
+#     else:
+#         features[key] = float(features[key])
+
+# # Collect user input into a feature array
+# features = np.array([features[key] for key in input_features])
+
+
+# Convert all inputs to string, then to floats if possible
+features_list = []
+for key in input_features:
+    value = features[key]
+    if value == '':
+        features_list.append(0.0)  # Default value for missing input
     else:
-        features[key] = float(features[key])
+        try:
+            features_list.append(float(value))
+        except ValueError:
+            features_list.append(hash(value) % 10)  # Simple hash to convert text to a number
 
-# Collect user input into a feature array
-features = np.array([features[key] for key in input_features])
+features_array = np.array(features_list)
 
 # Prediction
 # if st.button('Klasifikasi'):
