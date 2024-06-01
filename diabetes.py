@@ -42,17 +42,23 @@ for key, label in input_features.items():
 
     # Handle empty inputs
     if features[key] == '':
-        features[key] = 0
-    elif key in ['Age', 'BMI', 'SoundSleep', 'Sleep']:
-        features[key] = float(features[key])
-
+        all_filled = False  # Set flag to False if any input is empty
+    else:
+        # Convert specific inputs to float
+        if key in ['Age', 'BMI', 'SoundSleep', 'Sleep']:
+            try:
+                features[key] = float(features[key])
+            except ValueError:
+                st.warning(f'{label} harus berupa angka.')
+                all_filled = False
+                
 # Collect user input into a feature array
-features = np.array([features[key] for key in input_features])
+features_array = np.array([features[key] for key in input_features])
 
 # Prediction
 if st.button('Prediksi'):
     if all_filled:
-        result = predict_diabetes(features)
+        result = predict_diabetes(features_array)
         if result == 1:
             st.error('Pasien menderita diabetes.')
         else:
