@@ -14,16 +14,16 @@ filename3 = 'diabetes_model_3.sav'
 
 # Load tiga bagian model
 with open(filename1, 'rb') as file1:
-    RF_model_part1 = pickle.load(file1)
+    RF_model1 = pickle.load(file1)
 
 with open(filename2, 'rb') as file2:
-    RF_model_part2 = pickle.load(file2)
+    RF_model2 = pickle.load(file2)
 
 with open(filename3, 'rb') as file3:
-    RF_model_part3 = pickle.load(file3)
+    RF_model3 = pickle.load(file3)
 
 # Gabungkan ketiga bagian model menjadi satu model utuh
-RF_model = RF_model_part1 + RF_model_part2 + RF_model_part3
+RF_model = RF_model1 + RF_model2 + RF_model3
 
 # Function to make predictions
 def predict_diabetes(features):
