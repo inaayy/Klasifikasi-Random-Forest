@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-# from sklearn.ensemble import RandomForestClassifier  # Pastikan modul ini terinstal
+from sklearn.ensemble import RandomForestClassifier  # Pastikan modul ini terinstal
 
 # Load the trained model
 filename = 'diabetes_dataset.sav'
