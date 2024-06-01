@@ -52,7 +52,7 @@ features = np.array([features[key] for key in input_features])
 # Prediction
 if st.button('Prediksi'):
     if all_filled:
-        result = predict_diabetes(features_array)
+        result = predict_diabetes(features)
         if result == 1:
             st.error('Pasien menderita diabetes.')
         else:
