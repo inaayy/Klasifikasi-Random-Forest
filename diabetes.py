@@ -7,9 +7,9 @@ with open(filename, 'rb') as file:
     model = pickle.load(file)
 
 # Function to make predictions
-def predict_diabetes(features):
-    prediction = model.predict([features])
-    return prediction[0]
+def classification_diabetes(features):
+    classification = model.classifi([features])
+    return classification[0]
 
 # Streamlit app
 st.title("Diabetes Classification App")
@@ -55,13 +55,13 @@ for key, label in input_features.items():
 # Collect user input into a feature array
 features_array = np.array([features[key] for key in input_features])
 
-# Prediction
-if st.button('Prediksi'):
+# Klasifikasi
+if st.button('Klasifikasi'):
     if all_filled:
-        result = predict_diabetes(features_array)
+        result = classification_diabetes(features_array)
         if result == 1:
             st.error('Pasien menderita diabetes.')
         else:
             st.success('Pasien tidak menderita diabetes.')
-    else:
-        st.warning('Silakan isi semua data sebelum melakukan prediksi.')
+        else:    
+            st.warning('Silakan isi semua data sebelum melakukan prediksi.')
