@@ -21,16 +21,16 @@ Masukkan data pasien untuk mengetahui apakah mereka menderita diabetes atau tida
 
 # Input features dictionary
 input_features = {
-    'RegularMedicine': 'Regular Medicine',
-    'Age': 'Age',
-    'BMI': 'BMI',
-    'Family_Diabetes': 'Family Diabetes',
-    'Stress': 'Stress',
-    'HighBP': 'HighBP',
-    'SoundSleep': 'SoundSleep',
-    'PhysicallyActive': 'Physically Active',
-    'Sleep': 'Sleep',
-    'BPLevel': 'BP Level'
+    'RegularMedicine': '**Regular Medicine**',
+    'Age': '**Age**',
+    'BMI': '**BMI**',
+    'Family_Diabetes': '**Family Diabetes**',
+    'Stress': '**Stress**',
+    'HighBP': '**HighBP**',
+    'SoundSleep': '**SoundSleep**',
+    'PhysicallyActive': '**Physically Active**',
+    'Sleep': '**Sleep**',
+    'BPLevel': '**BP Level**'
 }
 
 # Process input features
