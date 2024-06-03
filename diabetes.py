@@ -34,11 +34,13 @@ input_features = {
 }
 
 # Process input features
+cols = st.columns(2)
 features = {}
 all_filled = True
 
 for key, label in input_features.items():
-    features[key] = st.text_input(label)
+    with cols[idx % 2]:  # Alternate between columns
+        features[key] = st.text_input(label)
 
     # Handle empty inputs
     if features[key] == '':
