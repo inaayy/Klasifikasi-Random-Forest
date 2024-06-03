@@ -8,7 +8,7 @@ with open(filename, 'rb') as file:
 
 # Function to make predictions
 def classification_diabetes(features):
-    classification = model.predict([features])
+    classification = model.classifi([features])
     return classification[0]
 
 # Streamlit app
@@ -34,15 +34,18 @@ input_features = {
 }
 
 # Process input features
-cols = st.columns(3)
+# cols = st.columns(3)
 features = {}
 all_filled = True
 
-with st.form("input_form"):
-    for idx, (key, label) in enumerate(input_features.items()):
-        with cols[idx % 3]:  # Alternate between columns
-            features[key] = st.text_input(label)
+# with st.form("input_form"):
+    # for idx, (key, label) in enumerate(input_features.items()):
+        # with cols[idx % 3]:  # Alternate between columns
+            # features[key] = st.text_input(label)
 
+for key, label in input_features.items():
+    features[key] = st.text_input(label)
+    
     # Handle empty inputs
     if features[key] == '':
         all_filled = False  # Set flag to False if any input is empty
@@ -66,5 +69,5 @@ if st.button('Klasifikasi'):
             st.error('Pasien menderita diabetes.')
         else:
             st.success('Pasien tidak menderita diabetes.')
-    else:    
-        st.warning('Silakan isi semua data sebelum melakukan prediksi.')
+        else:    
+            st.warning('Silakan isi semua data sebelum melakukan prediksi.')
