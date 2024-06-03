@@ -38,9 +38,10 @@ cols = st.columns(3)
 features = {}
 all_filled = True
 
-for key, label in input_features.items():
-    with cols[idx % 3]:  # Alternate between columns
-        features[key] = st.text_input(label)
+with st.form("input_form"):
+    for idx, (key, label) in enumerate(input_features.items()):
+        with cols[idx % 3]:  # Alternate between columns
+            features[key] = st.text_input(label)
 
     # Handle empty inputs
     if features[key] == '':
