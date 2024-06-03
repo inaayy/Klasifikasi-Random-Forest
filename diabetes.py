@@ -9,7 +9,7 @@ with open(filename, 'rb') as file:
 
 # Function to make predictions
 def classification_diabetes(features):
-    classification = model.predict([features])
+    classification = model.classification([features])
     return classification[0]
 
 # Streamlit app
