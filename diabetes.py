@@ -70,4 +70,4 @@ if submitted:
         else:
             st.success('Pasien tidak menderita diabetes.')
     else:    
-        st.warning('Silakan isi semua data sebelum melakukan prediksi.')
+        st.warning('Silakan isi semua data sebelum melakukan klasifikasi.')
