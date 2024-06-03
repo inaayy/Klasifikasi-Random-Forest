@@ -62,7 +62,7 @@ with st.form("input_form"):
 features_array = np.array([features[key] for key in input_features])
 
 # Klasifikasi
-if st.button('Klasifikasi'):
+if st.form_submit_button('Klasifikasi'):
     if all_filled:
         result = classification_diabetes(features_array)
         if result == 1:
