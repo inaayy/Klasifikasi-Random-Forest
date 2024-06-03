@@ -66,7 +66,7 @@ features_array = np.array([features[key] for key in input_features])
 # Klasifikasi
 if st.button('Klasifikasi'):
     if all_filled:
-        result = classification_diabetes(features_array)
+        result = classification_diabetes(features)
         if result == 1:
             st.error('Pasien menderita diabetes.')
         else:
