@@ -16,7 +16,6 @@ def classification_diabetes(features):
 st.title("Diabetes Classification App")
 
 st.write("""
-# Prediksi Diabetes
 Masukkan data pasien untuk mengetahui apakah mereka menderita diabetes atau tidak.
 """)
 
