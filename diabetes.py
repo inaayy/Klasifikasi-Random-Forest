@@ -69,5 +69,5 @@ if st.button('Klasifikasi'):
             st.error('Pasien menderita diabetes.')
         else:
             st.success('Pasien tidak menderita diabetes.')
-        else:    
-            st.warning('Silakan isi semua data sebelum melakukan prediksi.')
+    else:    
+        st.warning('Silakan isi semua data sebelum melakukan prediksi.')
