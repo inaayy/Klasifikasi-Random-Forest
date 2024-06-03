@@ -45,7 +45,7 @@ all_filled = True
 
 with st.form("input_form"):
     for key, label in input_features.items():
-        with cols[idx % 3]:  # Alternate between columns
+        with key[key % 3]:  # Alternate between columns
             features[key] = st.text_input(label)
     
     # Handle empty inputs
