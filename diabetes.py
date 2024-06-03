@@ -43,11 +43,6 @@ with st.form("input_form"):
         with cols[idx % 3]:  # Alternate between columns
             features[key] = st.text_input(label)
 
-# with st.form("input_form"):
-#     for key, label in input_features.items():
-#         with key[key % 3]:  # Alternate between columns
-#             features[key] = st.text_input(label)
-    
     # Handle empty inputs
     if features[key] == '':
         all_filled = False  # Set flag to False if any input is empty
@@ -59,14 +54,17 @@ with st.form("input_form"):
             except ValueError:
                 st.warning(f'{label} harus berupa angka.')
                 all_filled = False
+
+    # Submit button for the form
+    submitted = st.form_submit_button("Klasifikasi")
     
 # Collect user input into a feature array
 features_array = np.array([features[key] for key in input_features])
 
 # Klasifikasi
-if st.button('Klasifikasi'):
+if submitted:
     if all_filled:
-        result = classification_diabetes(features)
+        result = classification_diabetes(features_array)
         if result == 1:
             st.error('Pasien menderita diabetes.')
         else:
