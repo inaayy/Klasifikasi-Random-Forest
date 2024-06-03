@@ -54,15 +54,12 @@ with st.form("input_form"):
             except ValueError:
                 st.warning(f'{label} harus berupa angka.')
                 all_filled = False
-
-    # Submit button for the form
-    # submitted = st.form_submit_button("Klasifikasi")
     
 # Collect user input into a feature array
 features_array = np.array([features[key] for key in input_features])
 
 # Klasifikasi
-if st.form_submit_button('Klasifikasi'):
+if st.button('Klasifikasi'):
     if all_filled:
         result = classification_diabetes(features_array)
         if result == 1:
