@@ -34,12 +34,12 @@ input_features = {
 }
 
 # Process input features
-cols = st.columns(2)
+cols = st.columns(3)
 features = {}
 all_filled = True
 
 for key, label in input_features.items():
-    with cols[idx % 2]:  # Alternate between columns
+    with cols[idx % 3]:  # Alternate between columns
         features[key] = st.text_input(label)
 
     # Handle empty inputs
@@ -53,7 +53,10 @@ for key, label in input_features.items():
             except ValueError:
                 st.warning(f'{label} harus berupa angka.')
                 all_filled = False
-                
+
+    # Submit button for the form
+    submitted = st.form_submit_button("Klasifikasi")
+    
 # Collect user input into a feature array
 features_array = np.array([features[key] for key in input_features])
 
