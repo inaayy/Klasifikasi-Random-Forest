@@ -56,7 +56,7 @@ with st.form("input_form"):
                 all_filled = False
 
     # Submit button for the form
-    submitted = st.form_submit_button("Klasifikasi")
+    # submitted = st.form_submit_button("Klasifikasi")
     
 # Collect user input into a feature array
 features_array = np.array([features[key] for key in input_features])
